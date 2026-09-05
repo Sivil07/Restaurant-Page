@@ -1,4 +1,4 @@
+import "../css/global.css"
 import "../css/home.css";
-import { greeting } from "./home.js";
 
-console.log(greeting)
+
