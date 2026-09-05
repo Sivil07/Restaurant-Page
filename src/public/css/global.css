@@ -1,3 +1,16 @@
+/* Resets */
+
+*,
+::before,
+::after {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: red;
+    min-height: 100vh;
+    background-color: #f2e9da;
+    display: flex;
+    flex-direction: column;
 }
