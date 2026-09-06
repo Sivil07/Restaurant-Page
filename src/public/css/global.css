@@ -54,3 +54,35 @@ body {
     border-radius: 50%;
     padding: 0.5rem;
 }
+
+/* Header Styling - Nav Toggle Section */
+
+#nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#nav-toggle::before,
+#nav-toggle::after,
+#nav-toggle input {
+    content: "";
+    width: 50px;
+    height: 8px;
+    background-color: #f2e9da;
+    border-radius: 1rem;
+}
+
+#nav-toggle input {
+    appearance: none;
+    pointer-events: none;
+}
+
+#nav-toggle:has(input:checked) + #nav-container {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Header Styling - Nav Container Section */
