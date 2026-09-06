@@ -1,23 +1,25 @@
+import {landingPageContent} from "./content.js";
 import heroImage from "../../assets/img/signature-meal.jpg"
 
 class HomeBuilder {
     static #heroImageContent = { src: heroImage, alt: "Signature Meal" }
 
-    static #createElement({ elementTag, id, classNames, src, alt }) {
+    static #createElement({ elementTag, id, classNames, src, alt, textContent }) {
         const element = document.createElement(elementTag);
         if (id) element.id = id;
         if (classNames) element.classList.add(...classNames);
+        if (textContent) element.innerHTML = textContent;
         if (src) element.src = src;
         if (alt) element.alt = alt;
         return element;
     }
 
     static #buildSectionTextBlock() {
-        const sectionTextBlock = this.#createElement({ elementTag: "div", classNames: ["section-text-block"] });
-        const sectionSubHeading = this.#createElement({elementTag: "p" ,classNames: ["section-subheading"]});
-        const sectionHeading = this.#createElement({elementTag: "p", classNames: ["section-heading"]});
-        const sectionText = this.#createElement({elementTag: "p", classNames: ["section-text"]});
-        const sectionAction = this.#createElement({elementTag: "button", classNames: ["section-action"]});
+        const sectionTextBlock = this.#createElement({ elementTag: "div", classNames: ["section-text-block"]});
+        const sectionSubHeading = this.#createElement({elementTag: "p", classNames: ["section-subheading"], textContent: landingPageContent.hero.subheading });
+        const sectionHeading = this.#createElement({elementTag: "p", classNames: ["section-heading"], textContent: landingPageContent.hero.heading });
+        const sectionText = this.#createElement({elementTag: "p", classNames: ["section-text"], textContent: landingPageContent.hero.text });
+        const sectionAction = this.#createElement({elementTag: "button", classNames: ["section-action"], textContent: landingPageContent.hero.action });
 
         sectionTextBlock.append(
             sectionSubHeading,
