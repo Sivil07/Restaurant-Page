@@ -86,3 +86,47 @@ body {
 }
 
 /* Header Styling - Nav Container Section */
+
+#nav-container {
+    background-color: #362f27;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-top: 1px solid gray;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link,
+#nav-action {
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 0 10px 0;
+}
+
+.nav-link:hover,
+#nav-action {
+    background-color: #B87D24;
+    color: #1E1A16;
+}
+
+.nav-link {
+    background-color: transparent;
+    color: white;
+    transition: all 0.1s ease;
+}
+
+#nav-action {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
