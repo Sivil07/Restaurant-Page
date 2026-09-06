@@ -80,7 +80,7 @@ body {
     pointer-events: none;
 }
 
-#nav-toggle:has(input:checked) + #nav-container {
+#nav-toggle:has(input:checked)+#nav-container {
     opacity: 1;
     pointer-events: auto;
 }
@@ -146,4 +146,46 @@ body {
     flex-basis: 80%;
     padding: 1rem;
     border-top: 1px solid gray;
+}
+
+/* Media Queries */
+
+@media (min-width: 1100px) {
+
+    #nav-toggle {
+        display: none;
+    }
+
+    #nav-container {
+        background-color: transparent;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        border-top: none;
+        pointer-events: auto;
+        opacity: 1;
+        align-items: center;
+        flex-basis: 65%;
+    }
+
+    #nav-links {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+
+    #nav-action {
+        margin-right: 1rem;
+        margin-left: auto;
+        padding: 0.5rem 1.5rem;
+        border-radius: 1rem;
+    }
+
 }
