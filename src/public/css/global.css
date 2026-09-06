@@ -27,3 +27,30 @@ body {
     position: sticky;
     top: 0;
 }
+
+
+/* Heading Styling - Header Logo Section */
+
+#header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+#logo-name {
+    color: white;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+}
+
+#logo-name span {
+    color: #E4C892;
+}
+
+#logo-icon {
+    border: 1px solid #B87D24;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
