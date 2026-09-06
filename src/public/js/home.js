@@ -1,25 +1,16 @@
 import {landingPageContent} from "./content.js";
+import ElementBuilder from "./elementBuilder.js";
 import heroImage from "../../assets/img/signature-meal.jpg"
 
 class HomeBuilder {
     static #heroImageContent = { src: heroImage, alt: "Signature Meal" }
 
-    static #createElement({ elementTag, id, classNames, src, alt, textContent }) {
-        const element = document.createElement(elementTag);
-        if (id) element.id = id;
-        if (classNames) element.classList.add(...classNames);
-        if (textContent) element.innerHTML = textContent;
-        if (src) element.src = src;
-        if (alt) element.alt = alt;
-        return element;
-    }
-
     static #buildSectionTextBlock() {
-        const sectionTextBlock = this.#createElement({ elementTag: "div", classNames: ["section-text-block"]});
-        const sectionSubHeading = this.#createElement({elementTag: "p", classNames: ["section-subheading"], textContent: landingPageContent.hero.subheading });
-        const sectionHeading = this.#createElement({elementTag: "p", classNames: ["section-heading"], textContent: landingPageContent.hero.heading });
-        const sectionText = this.#createElement({elementTag: "p", classNames: ["section-text"], textContent: landingPageContent.hero.text });
-        const sectionAction = this.#createElement({elementTag: "button", classNames: ["section-action"], textContent: landingPageContent.hero.action });
+        const sectionTextBlock = ElementBuilder.createElement({ elementTag: "div", classNames: ["section-text-block"]});
+        const sectionSubHeading = ElementBuilder.createElement({elementTag: "p", classNames: ["section-subheading"], textContent: landingPageContent.hero.subheading });
+        const sectionHeading = ElementBuilder.createElement({elementTag: "p", classNames: ["section-heading"], textContent: landingPageContent.hero.heading });
+        const sectionText = ElementBuilder.createElement({elementTag: "p", classNames: ["section-text"], textContent: landingPageContent.hero.text });
+        const sectionAction = ElementBuilder.createElement({elementTag: "button", classNames: ["section-action"], textContent: landingPageContent.hero.action });
 
         sectionTextBlock.append(
             sectionSubHeading,
@@ -31,8 +22,8 @@ class HomeBuilder {
     }
 
     static #buildSectionContent() {
-        const sectionContent = this.#createElement({ elementTag: "div", classNames: ["section-content"] });
-        const heroImage = this.#createElement({ elementTag: "img", classNames: ["photo"], ...this.#heroImageContent });
+        const sectionContent = ElementBuilder.createElement({ elementTag: "div", classNames: ["section-content"] });
+        const heroImage = ElementBuilder.createElement({ elementTag: "img", classNames: ["photo"], ...this.#heroImageContent });
         const sectionTextBlock = this.#buildSectionTextBlock();
         sectionContent.append(
             sectionTextBlock,
@@ -42,7 +33,7 @@ class HomeBuilder {
     }
 
     static #buildHeroSection() {
-        const heroSection = this.#createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] });
+        const heroSection = ElementBuilder.createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] })
         const sectionContent = this.#buildSectionContent()
         heroSection.append(
             sectionContent,
@@ -52,8 +43,7 @@ class HomeBuilder {
     }
 
     static buildHomePage() {
-        ;
-        const homePage = this.#createElement({ elementTag: "main", id: "home-page" });
+        const homePage = ElementBuilder.createElement({ elementTag: "main", id: "home-page" });
         const heroSection = this.#buildHeroSection();
         // const craftHighlightSection = this.#createElement({elementTag: "section", id: "craft-highlights"});
         // const aboutUsSection = this.#createElement({elementTag: "section", id: "about-us", classNames: ["section-layout"]})
