@@ -1,0 +1,82 @@
+/* Custom Variables */
+
+:root {
+    --accent-clr: #B87D24;
+    --muted-clr: #8A8074;
+    --header-bg-clr: #1E1A16;
+    --section-action-width: 150px;
+    --homepage-spacing: 4rem;
+}
+
+/* Home Page Styling */
+
+#home-page {
+    display: grid;
+    gap: var(--homepage-spacing);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+        "Hero"
+        "Craft-Highlights"
+        "About-Us"
+        "Menu-Preview"
+        "Order-Ahead"
+        "Site-Info";
+}
+
+/* Shared Class Styling Across Multiple Sections*/
+
+.section-content,
+.section-text-block {
+    display: flex;
+    flex-direction: column;
+} 
+
+.section-layout {
+    display: flex;
+    justify-content: center;
+}
+
+.photo {
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 1rem;
+}
+
+.section-content {
+    flex-basis: 80%;
+    gap: 2rem;
+}
+
+.section-text-block {
+    gap: 1rem;
+}
+
+.section-subheading {
+    color: var(--accent-clr);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.section-heading {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.section-text {
+    color: var(--muted-clr);
+}
+
+.section-action {
+    background-color: var(--accent-clr);
+    font-weight: bold;
+    border: none;
+    color: var(--header-bg-clr);
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: var(--section-action-width);
+}
