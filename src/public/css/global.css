@@ -130,3 +130,20 @@ body {
     font-weight: bold;
 }
 
+/* Footer Styling */
+
+#site-footer {
+    background-color: #1E1A16;
+    color: #8A8074;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 1.5rem 0;
+    flex: 1;
+}
+
+#footer-text {
+    text-align: center;
+    flex-basis: 80%;
+    padding: 1rem;
+    border-top: 1px solid gray;
+}
