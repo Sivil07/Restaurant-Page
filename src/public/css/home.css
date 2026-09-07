@@ -6,6 +6,7 @@
     --header-bg-clr: #1E1A16;
     --section-action-width: 150px;
     --homepage-spacing: 4rem;
+    --craft-highlight-bg-clr: #dacab5;
 }
 
 /* Home Page Styling */
@@ -29,7 +30,7 @@
 .section-text-block {
     display: flex;
     flex-direction: column;
-} 
+}
 
 .section-layout {
     display: flex;
@@ -79,6 +80,40 @@
     text-transform: uppercase;
     cursor: pointer;
     width: var(--section-action-width);
+}
+
+/* Craft Highlights Styling */
+
+#craft-highlights {
+    background-color: var(--craft-highlight-bg-clr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.craft-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.craft-icon {
+    font-size: 1.5rem;
+    border: 5px solid var(--accent-clr);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.craft-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.craft-description {
+    color: var(--muted-clr);
 }
 
 /* Media Queries */
