@@ -8,7 +8,8 @@
     --homepage-spacing: 4rem;
     --craft-highlight-bg-clr: #dacab5;
     --light-txt-clr: white;
-    --card-shadow: 1px 1px 10px 2px var(--muted-clr);;
+    --card-shadow: 1px 1px 10px 2px var(--muted-clr);
+    ;
 }
 
 /* Home Page Styling */
@@ -195,16 +196,60 @@
     color: var(--muted-clr);
 }
 
+/* Order Ahead Section */
+
+#order-ahead {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--header-bg-clr);
+    color: var(--light-txt-clr);
+}
+
+#order-ahead-match {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+
+#counter-photo {
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+}
+
 /* Media Queries */
 
 @media (min-width: 800px) {
+    /* Shared Class Across Sections Styling */
     .section-heading {
         font-size: 3.5rem;
+    }
+
+    /* Order Ahead Styling */
+    #order-ahead {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #counter-photo,
+    #order-ahead-match {
+        flex: 1;
+    }
+
+    #counter-photo {
+        max-width: 50%;
+    }
+
+    #order-heading {
+        font-size: 3rem;
     }
 
 }
 
 @media (min-width: 1100px) {
+    /* Shared Classes Across Section Styling */
     .section-content {
         flex-direction: row;
         align-items: center;
