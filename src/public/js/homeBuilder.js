@@ -80,8 +80,8 @@ class HomeBuilder {
 
     static #buildMenuPreviewHeader() {
         const menuPreviewHeader = ElementBuilder.createElement({elementTag: "div", id: "menu-preview-header"});
-        const menuSubHeading = ElementBuilder.createElement({ elementTag: "p", id: "menu-subheading", classNames: ["subheading"], textContent: landingPageContent.menuPreview.subheading });
-        const menuHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["heading"], textContent: landingPageContent.menuPreview.heading });
+        const menuSubHeading = ElementBuilder.createElement({ elementTag: "p", id: "menu-subheading", classNames: ["section-subheading"], textContent: landingPageContent.menuPreview.subheading });
+        const menuHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["section-heading"], textContent: landingPageContent.menuPreview.heading });
         menuPreviewHeader.append(menuSubHeading, menuHeading);
         return menuPreviewHeader;
     }
