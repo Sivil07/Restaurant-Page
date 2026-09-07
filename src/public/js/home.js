@@ -1,11 +1,7 @@
 import { landingPageContent } from "./content.js";
 import ElementBuilder from "./elementBuilder.js";
-import heroImage from "../../assets/img/signature-meal.jpg"
-import aboutImage from "../../assets/img/restaurant-interior.jpg";
 
 class HomeBuilder {
-    static #heroImageContent = { src: heroImage, alt: "Signature Meal" }
-    static #aboutImageContent = { src: aboutImage, alt: "Restaurant Interior" }
 
     /* Shared builders for sections that follow the layout 
     with an image paired with a text block (only hero and about-us sections)
@@ -57,18 +53,17 @@ class HomeBuilder {
         return craftItems;
     }
 
-    /* Builders for each individual homepage section */
-    
+    /* Builders for each individual homepage section */ 
     static #buildHeroSection() {
         const heroSection = ElementBuilder.createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] })
-        const sectionContent = this.#buildSectionContent({ subheading: landingPageContent.hero.subheading, heading: landingPageContent.hero.heading, text: landingPageContent.hero.text, action: landingPageContent.hero.action }, { elementTag: "img", classNames: ["photo"], ...this.#heroImageContent })
+        const sectionContent = this.#buildSectionContent({ subheading: landingPageContent.hero.subheading, heading: landingPageContent.hero.heading, text: landingPageContent.hero.text, action: landingPageContent.hero.action }, { elementTag: "img", classNames: ["photo"], ...landingPageContent.hero.imageContents })
         heroSection.appendChild(sectionContent);
         return heroSection;
     }
 
     static #buildAboutUsSection() {
         const aboutUsSection = ElementBuilder.createElement({ elementTag: "section", id: "about-us", classNames: ["section-layout"] });
-        const sectionContent = this.#buildSectionContent({ subheading: landingPageContent.aboutUs.subheading, heading: landingPageContent.aboutUs.heading, text: landingPageContent.aboutUs.text, link: landingPageContent.aboutUs.aboutLink }, { elementTag: "img", classNames: ["photo"], ...this.#aboutImageContent }, true);
+        const sectionContent = this.#buildSectionContent({ subheading: landingPageContent.aboutUs.subheading, heading: landingPageContent.aboutUs.heading, text: landingPageContent.aboutUs.text, link: landingPageContent.aboutUs.aboutLink }, { elementTag: "img", classNames: ["photo"], ...landingPageContent.aboutUs.imageContents }, true);
         aboutUsSection.appendChild(sectionContent)
         return aboutUsSection;
     }
@@ -80,7 +75,6 @@ class HomeBuilder {
     }
 
     /* Assembles the full homepage by building and appending each section */
-
     static buildHomePage() {
         const homePage = ElementBuilder.createElement({ elementTag: "main", id: "home-page" });
         const heroSection = this.#buildHeroSection();

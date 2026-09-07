@@ -1,3 +1,6 @@
+import heroImage from "../../assets/img/signature-meal.jpg"
+import aboutImage from "../../assets/img/restaurant-interior.jpg";
+
 const landingPageContent = {
     hero: {
         "subheading": "Handcrafted. Every Day",
@@ -5,6 +8,7 @@ const landingPageContent = {
         "text": `Fresh-baked bread, honest ingredients, built to order —<br>no 
         shortcuts, no filler. Just a really good sandwich.`,
         "action": "Order ahead",
+        "imageContents": { src: heroImage, alt: "Signature Meal" }
     },
     craftHighlights: [
         {"icon": "🍞", "title": "Fresh baked bread", "description": "Baked in-house each morning, never trucked in."},
@@ -18,6 +22,7 @@ const landingPageContent = {
         The Oaken Label is built on the idea that a sandwich deserves the same care<br>
         as any other meal — good bread, real ingredients, made by hand.`,
         "aboutLink": "Read our story ➜",
+        "imageContents": { src: aboutImage, alt: "Restaurant Interior" }
     }
 };
 
