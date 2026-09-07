@@ -105,6 +105,32 @@ class HomeBuilder {
         return orderAheadTextBlock;
     }
 
+    /* Builders for siteInfo component */
+
+    static #buildInfoColumns() {
+        const infoColumns = [];
+        for (const column of landingPageContent.siteInfo) {
+            const infoColumn = ElementBuilder.createElement({ elementTag: "div", classNames: ["info-column"] });
+            const { title, textArray } = column;
+            const infoTitle = ElementBuilder.createElement({ elementTag: "p", classNames: ["info-title"], textContent: title });
+            if (textArray.length > 1) {
+                const infoDetails = ElementBuilder.createElement({ elementTag: "div", classNames: ["info-details"] });
+                const [ textOne, textTwo ] = textArray;
+                const infoTextOne = ElementBuilder.createElement({ elementTag: "p", classNames: ["info-text"], textContent: textOne });
+                const infoTextTwo = ElementBuilder.createElement({ elementTag: "p", classNames: ["info-text"], textContent: textTwo });
+                infoDetails.append(infoTextOne, infoTextTwo);
+                infoColumn.append(infoTitle, infoDetails);
+                infoColumns.push(infoColumn);
+            } else {
+                const [ textContent ] = textArray;
+                const infoText = ElementBuilder.createElement({ elementTag: "p", classNames: ["info-text"], textContent: textContent });
+                infoColumn.append(infoTitle, infoText);
+                infoColumns.push(infoColumn);
+            }
+        }
+        return infoColumns;
+    }
+
     /* Builders for each individual homepage section */ 
     static #buildHeroSection() {
         const heroSection = ElementBuilder.createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] })
@@ -141,6 +167,12 @@ class HomeBuilder {
         return orderAheadSection;
     }
 
+    static #buildSiteInfoSection() {
+        const siteInfoSection = ElementBuilder.createElement({ elementTag: "section", id: "site-info" });
+        siteInfoSection.append(...this.#buildInfoColumns());
+        return siteInfoSection;
+    }
+
 
     /* Assembles the full homepage by building and appending each section */
     static buildHomePage() {
@@ -150,9 +182,7 @@ class HomeBuilder {
         const craftHighlightSection = this.#buildCraftHighlightsSection();
         const menuPreviewSection = this.#builderMenuPreviewSection();
         const orderAheadSection = this.#buildOrderAheadSection();
-
-        // const orderAheadSection = this.#createElement({elementTag: "section", id: "order-ahead"});
-        // const siteInfoSection = this.#createElement({elementTag: "section", id: "site-info"});
+        const siteInfoSection = this.#buildSiteInfoSection();
 
         homePage.append(
             heroSection,
@@ -160,7 +190,7 @@ class HomeBuilder {
             aboutUsSection,
             menuPreviewSection,
             orderAheadSection,
-            // siteInfoSection,
+            siteInfoSection,
         )
 
         return homePage;
