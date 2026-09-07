@@ -26,6 +26,30 @@ const landingPageContent = {
         as any other meal — good bread, real ingredients, made by hand.`,
         "aboutLink": "Read our story ➜",
         imageContents: { src: aboutImage, alt: "Restaurant Interior" }
+    },
+    menuPreview: {
+        subheading: "Our Menu",
+        heading: "Fan Favorites",
+        menuItems: [
+            {
+                title: "The Rustic Oak<span>$13</span>",
+                description: "Cured prosciutto, provolone, fresh tomato, and leafy greens on artisan country bread.",
+                src: favoriteOne,
+                alt: "The Rustic Oak",
+            },
+            {
+                title: "Garden Press<span>$11</span>",
+                description: "Roasted potatoes, mixed seasonal vegetables, and grilled sausages served warm and hearty.",
+                src: favoriteTwo,
+                alt: "Garden Press",
+            },
+            {
+                title: "Fig & Brie Toast<span>$12</span>",
+                description: "Creamy brie on toasted artisan bread topped with fresh figs, walnuts, mint, and a drizzle of honey.",
+                src: favoriteThree,
+                alt: "Fig & Brie Toast",
+            }
+        ]
     }
 };
 
