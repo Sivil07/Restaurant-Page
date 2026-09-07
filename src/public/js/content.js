@@ -62,13 +62,13 @@ const landingPageContent = {
     },
     siteInfo: [
         {
-            title: "The Oaken Label", text: ["Handcrafted sandwiches, fresh bread daily, made with ingredients you can pronounce."],
+            title: "The Oaken Label", textArray: ["Handcrafted sandwiches, fresh bread daily, made with ingredients you can pronounce."],
         },
         {
-            title: "Hours", text: ["Mon - Fri: 8am - 7pm", "Sat - Sun: 9am - 5pm"]
+            title: "Hours", textArray: ["Mon - Fri: 8am - 7pm", "Sat - Sun: 9am - 5pm"]
         },
         {
-            title: "Contact", text: ["47 Willow Bend Road, Brookhaven", "(000) 123-9999", "contact@oakandharbor.com"]
+            title: "Contact", textArray: ["47 Willow Bend Road, Brookhaven", "(000) 123-9999", "contact@oakandharbor.com"]
         }
     ]
 };
