@@ -53,6 +53,47 @@ class HomeBuilder {
         return craftItems;
     }
 
+    /* Builders for menuPreview component */
+
+    static #buildMenuItems() {
+        const menuItems = [];
+        for (const itemParts of landingPageContent.menuPreview.menuItems) {
+            const menuItem = ElementBuilder.createElement({ elementTag: "div", classNames: [ "menu-item"] });
+            const menuItemInfo = ElementBuilder.createElement({ elementTag: "div", classNames: ["menu-item-info"] });
+            const { title, description, src, alt } = itemParts;
+            const menuTitle = ElementBuilder.createElement({ elementTag: "p", classNames: ["menu-item-title"], textContent: title });
+            const menuDescription = ElementBuilder.createElement({ elementTag: "p", classNames: ["menu-item-description"], textContent: description });
+            const menuImage = ElementBuilder.createElement({ elementTag: "img", classNames: ["food-image"], src: src, alt: alt});
+            menuItemInfo.append(menuTitle, menuDescription)
+            menuItem.append(menuImage, menuItemInfo)
+            menuItems.push(menuItem);
+        }
+
+        return menuItems;
+    }
+
+    static #buildMenuCollection() {
+        const menuItems = ElementBuilder.createElement({ elementTag: "div", id: "menu-items" });
+        menuItems.append(...this.#buildMenuItems());
+        return menuItems;
+    }
+
+    static #buildMenuPreviewHeader() {
+        const menuPreviewHeader = ElementBuilder.createElement({elementTag: "div", id: "menu-preview-header"});
+        const menuSubHeading = ElementBuilder.createElement({ elementTag: "p", id: "menu-subheading", classNames: ["subheading"], textContent: landingPageContent.menuPreview.subheading });
+        const menuHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["heading"], textContent: landingPageContent.menuPreview.heading });
+        menuPreviewHeader.append(menuSubHeading, menuHeading);
+        return menuPreviewHeader;
+    }
+
+    static #buildMenuPreviewContent() {
+        const menuPreviewContent = ElementBuilder.createElement({ elementTag: "div", id: "menu-preview-content"});
+        const menuPreviewHeader = this.#buildMenuPreviewHeader();
+        const menuPreviewItems = this.#buildMenuCollection();
+        menuPreviewContent.append(menuPreviewHeader, menuPreviewItems);
+        return menuPreviewContent;
+    }
+
     /* Builders for each individual homepage section */ 
     static #buildHeroSection() {
         const heroSection = ElementBuilder.createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] })
@@ -74,12 +115,20 @@ class HomeBuilder {
         return craftHighlightsSection;
     }
 
+    static #builderMenuPreviewSection() {
+        const menuPreviewSection = ElementBuilder.createElement({ elementTag: "section", id: "menu-preview" });
+        const menuPreviewContent = this.#buildMenuPreviewContent();
+        menuPreviewSection.appendChild(menuPreviewContent);
+        return menuPreviewSection;
+    }
+
     /* Assembles the full homepage by building and appending each section */
     static buildHomePage() {
         const homePage = ElementBuilder.createElement({ elementTag: "main", id: "home-page" });
         const heroSection = this.#buildHeroSection();
         const aboutUsSection = this.#buildAboutUsSection();
         const craftHighlightSection = this.#buildCraftHighlightsSection();
+        const menuPreviewSection = this.#builderMenuPreviewSection();
         // const aboutUsSection = this.#createElement({elementTag: "section", id: "about-us", classNames: ["section-layout"]})
         // const menuPreviewSection = this.#createElement({elementTag: "section", id: "menu-preview"});
         // const orderAheadSection = this.#createElement({elementTag: "section", id: "order-ahead"});
@@ -89,7 +138,7 @@ class HomeBuilder {
             heroSection,
             craftHighlightSection,
             aboutUsSection,
-            // menuPreviewSection,
+            menuPreviewSection,
             // orderAheadSection,
             // siteInfoSection,
         )
