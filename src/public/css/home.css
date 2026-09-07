@@ -7,6 +7,8 @@
     --section-action-width: 150px;
     --homepage-spacing: 4rem;
     --craft-highlight-bg-clr: #dacab5;
+    --light-txt-clr: white;
+    --card-shadow: 1px 1px 10px 2px var(--muted-clr);;
 }
 
 /* Home Page Styling */
@@ -120,6 +122,76 @@
 }
 
 .craft-description {
+    color: var(--muted-clr);
+}
+
+/* Menu Preview Section */
+
+#menu-preview {
+    display: flex;
+    justify-content: center;
+}
+
+#menu-preview-content,
+#menu-preview-header,
+.menu-item,
+.menu-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#menu-preview-content {
+    flex-basis: 80%;
+    gap: 2rem;
+}
+
+#menu-preview-header {
+    align-items: center;
+}
+
+#menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+}
+
+.menu-item {
+    box-shadow: var(--card-shadow);
+    background-color: var(--light-txt-clr);
+    border-radius: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.food-image {
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.menu-item-info {
+    background-color: var(--light-txt-clr);
+    padding: 1rem;
+    flex: 1;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.menu-item-title {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.menu-item-title span {
+    color: var(--accent-clr);
+    font-weight: bold;
+}
+
+.menu-item-description {
     color: var(--muted-clr);
 }
 
