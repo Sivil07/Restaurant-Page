@@ -97,7 +97,7 @@ class HomeBuilder {
     /* Builders for orderAhead component  */
 
     static #orderAheadTextBlock() {
-        const orderAheadTextBlock = ElementBuilder.createElement({ elementTag: "div", id: "order-ahead-match", classNames: ["section-text-block"] });
+        const orderAheadTextBlock = ElementBuilder.createElement({ elementTag: "div", id: "order-ahead-match" });
         const orderSubHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["section-subheading"], textContent: landingPageContent.orderAhead.subheading });
         const orderHeading = ElementBuilder.createElement({ elementTag: "p", id: "order-heading", classNames: ["section-heading"], textContent: landingPageContent.orderAhead.heading });
         const orderAction = ElementBuilder.createElement({ elementTag: "button", classNames: ["section-action"], textContent: landingPageContent.orderAhead.action });
