@@ -43,7 +43,7 @@ class HomeBuilder {
     }
 
     /* Builders for craftHighlights component */
-    static #buildCraftItem() {
+    static #buildCraftItems() {
         const craftItems = [];
         for (const craftParts of landingPageContent.craftHighlights) {
             const craftItem = ElementBuilder.createElement({ elementTag: "div", classNames: ["craft-item"]});
@@ -75,7 +75,7 @@ class HomeBuilder {
 
     static #buildCraftHighlightsSection() {
         const craftHighlightsSection = ElementBuilder.createElement({ elementTag: "section", id: "craft-highlights" });
-        craftHighlightsSection.append(...this.#buildCraftItem());
+        craftHighlightsSection.append(...this.#buildCraftItems());
         return craftHighlightsSection;
     }
 
