@@ -3,6 +3,8 @@ import aboutImage from "../../assets/img/restaurant-interior.jpg";
 import favoriteOne from "../../assets/img/favorite-one.jpg";
 import favoriteTwo from "../../assets/img/favorite-two.jpg";
 import favoriteThree from "../../assets/img/favorite-three.jpg";
+import counterDisplay from "../../assets/img/counter-display.jpg";
+
 
 const landingPageContent = {
     hero: {
@@ -50,7 +52,14 @@ const landingPageContent = {
                 alt: "Fig & Brie Toast",
             }
         ]
-    }
+    },
+    orderAhead: {
+        subheading: "Skip the line",
+        heading: "Order Ahead",
+        action: "Order Online",
+        src: counterDisplay,
+        alt: "Counter Display"
+    },
 };
 
 
