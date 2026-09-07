@@ -55,7 +55,7 @@ const landingPageContent = {
     },
     orderAhead: {
         subheading: "Skip the line",
-        heading: "Order Ahead",
+        heading: "Order ahead,<br>pick up fresh",
         action: "Order Online",
         src: counterDisplay,
         alt: "Counter Display"
