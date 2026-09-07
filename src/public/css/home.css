@@ -82,6 +82,13 @@
     width: var(--section-action-width);
 }
 
+/* About Us Section Styling */
+#about-link {
+    color: var(--accent-clr);
+    font-weight: bold;
+}
+
+
 /* Craft Highlights Styling */
 
 #craft-highlights {
