@@ -1,7 +1,7 @@
 import "../css/global.css"
 import "../css/home.css";
 
-import HomeBuilder from "./home.js";
+import HomeBuilder from "./homeBuilder.js";
 
 const content = document.querySelector("#content");
 
