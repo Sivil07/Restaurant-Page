@@ -94,6 +94,17 @@ class HomeBuilder {
         return menuPreviewContent;
     }
 
+    /* Builders for orderAhead component  */
+
+    static #orderAheadTextBlock() {
+        const orderAheadTextBlock = ElementBuilder.createElement({ elementTag: "div", id: "order-ahead-match", classNames: ["section-text-block"] });
+        const orderSubHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["section-subheading"], textContent: landingPageContent.orderAhead.subheading });
+        const orderHeading = ElementBuilder.createElement({ elementTag: "p", id: "order-heading", classNames: ["section-heading"], textContent: landingPageContent.orderAhead.heading });
+        const orderAction = ElementBuilder.createElement({ elementTag: "button", classNames: ["section-action"], textContent: landingPageContent.orderAhead.action });
+        orderAheadTextBlock.append(orderSubHeading, orderHeading, orderAction);
+        return orderAheadTextBlock;
+    }
+
     /* Builders for each individual homepage section */ 
     static #buildHeroSection() {
         const heroSection = ElementBuilder.createElement({ elementTag: "section", id: "hero", classNames: ["section-layout"] })
@@ -122,6 +133,15 @@ class HomeBuilder {
         return menuPreviewSection;
     }
 
+    static #buildOrderAheadSection() {
+        const orderAheadSection = ElementBuilder.createElement({ elementTag: "section", id: "order-ahead" });
+        const orderAheadTextBlock = this.#orderAheadTextBlock();
+        const orderAheadImage = ElementBuilder.createElement({ elementTag: "img", id: "counter-photo", src: landingPageContent.orderAhead.src, alt: landingPageContent.orderAhead.alt });
+        orderAheadSection.append(orderAheadImage, orderAheadTextBlock)
+        return orderAheadSection;
+    }
+
+
     /* Assembles the full homepage by building and appending each section */
     static buildHomePage() {
         const homePage = ElementBuilder.createElement({ elementTag: "main", id: "home-page" });
@@ -129,8 +149,8 @@ class HomeBuilder {
         const aboutUsSection = this.#buildAboutUsSection();
         const craftHighlightSection = this.#buildCraftHighlightsSection();
         const menuPreviewSection = this.#builderMenuPreviewSection();
-        // const aboutUsSection = this.#createElement({elementTag: "section", id: "about-us", classNames: ["section-layout"]})
-        // const menuPreviewSection = this.#createElement({elementTag: "section", id: "menu-preview"});
+        const orderAheadSection = this.#buildOrderAheadSection();
+
         // const orderAheadSection = this.#createElement({elementTag: "section", id: "order-ahead"});
         // const siteInfoSection = this.#createElement({elementTag: "section", id: "site-info"});
 
@@ -139,7 +159,7 @@ class HomeBuilder {
             craftHighlightSection,
             aboutUsSection,
             menuPreviewSection,
-            // orderAheadSection,
+            orderAheadSection,
             // siteInfoSection,
         )
 
