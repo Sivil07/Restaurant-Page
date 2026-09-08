@@ -1,9 +1,9 @@
 import "../css/global.css"
 import "../css/home.css";
 
-import HomeBuilder from "./homeBuilder.js";
+import PageLoader from "./pageLoader.js";
+import PageWatcher from "./pageWatcher.js";
 
-const content = document.querySelector("#content");
+PageLoader.initialize();
 
-content.appendChild(HomeBuilder.buildHomePage())
-
+PageWatcher.navListener();
