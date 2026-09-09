@@ -1,5 +1,6 @@
 import HomeBuilder from "./homeBuilder.js";
 import NodeCollector from "./nodeCollector.js";
+import PageWatcher from "./pageWatcher.js";
 
 /* Handles adding, removing, and initializing the page currently shown in #content */
 class PageLoader {
@@ -16,6 +17,7 @@ class PageLoader {
     static initialize() {
         const homePage = HomeBuilder.buildHomePage();
         NodeCollector.addNode(homePage);
+        PageWatcher.title = HomeBuilder.name;
         this.loadPage(homePage);
     }
 }

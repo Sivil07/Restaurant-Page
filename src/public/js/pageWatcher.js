@@ -4,6 +4,13 @@ import HomeBuilder from "./homeBuilder.js";
 
 /* Handles navigation events and manages page transitions */
 class PageWatcher {
+    static #title = document.querySelector("title");
+
+    /* Updates <title> element with the given page name */
+    static set title(newTitle) {
+        this.#title.textContent = `${newTitle} Page`;
+    }
+
 
     /* Strips whitespace from nav link text so it matches #findNewPage's cases */
     static #trimString(s) {
