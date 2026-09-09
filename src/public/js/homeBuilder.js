@@ -3,6 +3,12 @@ import ElementBuilder from "./elementBuilder.js";
 
 class HomeBuilder {
 
+    static #navName = "Home";
+
+    static get name() {
+        return this.#navName;
+    }
+
     /* Shared builders for sections that follow the layout 
     with an image paired with a text block (only hero and about-us sections)
     */
