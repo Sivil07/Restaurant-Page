@@ -53,6 +53,7 @@ class PageWatcher {
                 NodeCollector.removeNode();
                 PageLoader.loadPage(newPage);
                 NodeCollector.addNode(newPage);
+                this.title = cleanedString;
             }
         })
     }
