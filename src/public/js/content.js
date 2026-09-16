@@ -26,7 +26,7 @@ const landingPageContent = {
         text: `Started in a small corner kitchen with one recipe and a wood-fired oven,<br>
         The Oaken Label is built on the idea that a sandwich deserves the same care<br>
         as any other meal — good bread, real ingredients, made by hand.`,
-        "aboutLink": "Read our story ➜",
+        aboutLink : "Read our story ➜",
         imageContents: { src: aboutImage, alt: "Restaurant Interior" }
     },
     menuPreview: {
@@ -73,7 +73,17 @@ const landingPageContent = {
     ]
 };
 
+const menuPageContent = {
+    menuHeader: {
+        subheading: "Our Menu",
+        heading: "Build Your Order"
+    },
+    menuOptions: {
+        options: [ "Signature Classics", "Hot Grilled", "Cold Crafted", "Sides", "Drinks" ]
+    }
+}
 
 export {
-    landingPageContent
+    landingPageContent,
+    menuPageContent
 };
