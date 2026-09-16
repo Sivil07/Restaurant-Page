@@ -21,8 +21,10 @@ class MenuBuilder {
             menuOptions,
             menuCards
         );
+
+        return menuPage;
     }
 }
 
-export default MenuBuilder
+export default MenuBuilder;
 
