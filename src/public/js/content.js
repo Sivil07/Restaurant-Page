@@ -87,6 +87,22 @@ const menuPageContent = {
             { textName: "Drinks", dataValue: "drinks"} 
         ],
         dataName: "option"
+    },
+    menuCards: {
+        classics: [
+            {
+                icon: "🥪", label: "Hearthside Melt", title: "The Hearthside Melt<span>$12</span>", description: "Roasted turkey, sharp cheddar, and garlic aioli on toasted sourdough."
+            },
+            {
+                icon: "🥪", label: "Maplewood Stack", title: "The Maplewood Stack<span>$11</span>", description: "Smoked ham, Swiss, and caramelized onion on farmhouse bread."
+            },
+            {
+                icon: "🥪", label: "Briar Patch", title: "Briar Patch<span>$12</span>", description: "Egg salad, paprika, and greens on toasted brioche."
+            },
+            {
+                icon: "🥪", label: "Country Lane", title: "The Country Lane<span>$13</span>", description: "Roast beef, provolone, and herb mayo on a crusty loaf."
+            }
+        ]
     }
 }
 
