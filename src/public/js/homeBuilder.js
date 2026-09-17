@@ -1,5 +1,7 @@
 import { landingPageContent } from "./content.js";
 import ElementBuilder from "./elementBuilder.js";
+import PageWatcher from "./pageWatcher.js";
+import MenuBuilder from "./menuBuilder.js";
 
 class HomeBuilder {
 
@@ -179,6 +181,26 @@ class HomeBuilder {
         return siteInfoSection;
     }
 
+    /* Listeners for homePage (Two listeners for transition to new page) */
+    static homePageListeners(homePage) {
+        homePage.addEventListener("click", (e) => {
+            const element = e.target;
+            if (element.id === "about-link") {
+                const newPage = MenuBuilder.buildMenuPage();
+                PageWatcher.swapPage(newPage, MenuBuilder.name)
+                return;
+            }
+            
+            const classList = [...element.classList]
+            
+            if (classList.includes("section-action")) {
+                const newPage = MenuBuilder.buildMenuPage();
+                PageWatcher.swapPage(newPage, MenuBuilder.name);
+                return;
+            }
+        })
+    }
+
 
     /* Assembles the full homepage by building and appending each section */
     static buildHomePage() {
@@ -199,9 +221,10 @@ class HomeBuilder {
             siteInfoSection,
         )
 
+        this.homePageListeners(homePage);
+
         return homePage;
     }
-
 }
 
 export default HomeBuilder;
