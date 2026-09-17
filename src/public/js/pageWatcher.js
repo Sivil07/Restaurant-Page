@@ -42,6 +42,15 @@ class PageWatcher {
         return newPage;
     }
 
+    /* Swaps the current page for a new one and updates the document title */
+    static swapPage(newPage, pageTitle) {
+        PageLoader.removePage(NodeCollector.node);
+        NodeCollector.removeNode();
+        PageLoader.loadPage(newPage);
+        NodeCollector.addNode(newPage);
+        this.title = pageTitle;
+    }
+
     /* Listens for nav clicks.
     It swaps the current page for the clicked nav link's page */
     static navListener() {
@@ -51,11 +60,7 @@ class PageWatcher {
             const cleanedString = this.#trimString(element.textContent);
             const newPage = this.#findNewPage(cleanedString);
             if (newPage !== undefined) {
-                PageLoader.removePage(NodeCollector.node);
-                NodeCollector.removeNode();
-                PageLoader.loadPage(newPage);
-                NodeCollector.addNode(newPage);
-                this.title = cleanedString;
+                this.swapPage(newPage, cleanedString);
             }
         })
     }
