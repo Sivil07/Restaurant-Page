@@ -79,7 +79,14 @@ const menuPageContent = {
         heading: "Build Your Order"
     },
     menuOptions: {
-        options: [ "Signature Classics", "Hot Grilled", "Cold Crafted", "Sides", "Drinks" ]
+        options: [ 
+            { textName: "Signature Classics", dataValue: "classics"}, 
+            { textName: "Hot Grilled", dataValue: "grilled"}, 
+            { textName: "Cold Crafted", dataValue: "cold"}, 
+            { textName: "Sides", dataValue: "sides"}, 
+            { textName: "Drinks", dataValue: "drinks"} 
+        ],
+        dataName: "option"
     }
 }
 
