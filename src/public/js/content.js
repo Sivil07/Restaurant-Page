@@ -102,6 +102,20 @@ const menuPageContent = {
             {
                 icon: "🥪", label: "Country Lane", title: "The Country Lane<span>$13</span>", description: "Roast beef, provolone, and herb mayo on a crusty loaf."
             }
+        ],
+        grilled: [
+            {
+                icon: "🥪", label: "Ashwood Sizzler", title: "Ashwood Sizzler<span>$11</span>", description: "Pastrami, mozzarella, and spicy mustard on toasted rye."
+            },
+            {
+                icon: "🥪", label: "Embercrest Grill", title: "Embercrest Grill<span>$15</span>", description: "Beef, caramelized onion, and provolone on a toasted baguette."
+            },
+            {
+                icon: "🥪", label: "Flamebrook Crunch", title: "Flamebrook Crunch<span>$11</span>", description: "Chicken, crispy bacon, and chipotle ranch on toasted wheat."
+            },
+            {
+                icon: "🥪", label: "Charstone Melt", title: "Charstone Melt<span>$11</span>", description: "Turkey, smoked gouda, and herb aioli on grilled sourdough."
+            }
         ]
     }
 }
