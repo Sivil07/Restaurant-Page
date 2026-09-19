@@ -119,6 +119,8 @@ class MenuBuilder {
             case "grilled":
                 newOption = menuPageContent.menuCards.grilled;
                 break;
+            case "cold":
+                newOption = menuPageContent.menuCards.coldPress;
             default: 
         }
         return newOption;

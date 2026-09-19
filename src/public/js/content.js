@@ -116,6 +116,20 @@ const menuPageContent = {
             {
                 icon: "🥪", label: "Charstone Melt", title: "Charstone Melt<span>$11</span>", description: "Turkey, smoked gouda, and herb aioli on grilled sourdough."
             }
+        ],
+        coldPress: [
+            {
+                icon: "🥪", label: "Polar Vine", title: "Polar Vine<span>$12</span>", description: "Marinated peppers, feta, olives, and chilled oregano dressing on rustic wheat."
+            },
+            {
+                icon: "🥪", label: "Alpine Breeze", title: "The Alpine Breeze<span>$16</span>", description: "Smoked salmon, capers, cucumber ribbons, and herb cream on chilled rye."
+            },
+            {
+                icon: "🥪", label: "Cool Creek", title: "Cool Creek<span>$9</span>", description: "Roasted chicken, lemon herb vinaigrette, tomato, and arugula on cold ciabatta."
+            },
+            {
+                icon: "🥪", label: "Glacier Club", title: "The Glacier Club<span>$14</span>", description: "Turkey, chilled bacon, iceberg crunch, and citrus mayo on country white."
+            }
         ]
     }
 }
