@@ -1,18 +1,18 @@
 
 /* Tracks the page node currently rendered, so it can be removed during navigation */
 class NodeCollector {
-    static #collector = [];
+    static #activePageNode = null
 
-    static addNode(newNode) {
-        this.#collector.push(newNode);
-    } 
-
-    static removeNode() {
-        this.#collector.pop();
+    static setActivePageNode(pageNode) {
+        this.#activePageNode = pageNode
     }
 
-    static get node() {
-        return this.#collector[0];
+    static clearActivePageNode() {
+        this.#activePageNode = null
+    }
+
+    static get activePage() {
+        return this.#activePageNode
     }
 }
 

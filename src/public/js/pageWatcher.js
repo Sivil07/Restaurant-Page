@@ -44,10 +44,10 @@ class PageWatcher {
 
     /* Swaps the current page for a new one and updates the document title */
     static swapPage(newPage, pageTitle) {
-        PageLoader.removePage(NodeCollector.node);
-        NodeCollector.removeNode();
+        PageLoader.removePage(NodeCollector.activePage);
+        NodeCollector.clearActivePageNode()
         PageLoader.loadPage(newPage);
-        NodeCollector.addNode(newPage);
+        NodeCollector.setActivePageNode(newPage)
         this.title = pageTitle;
     }
 

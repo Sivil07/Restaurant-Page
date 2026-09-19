@@ -16,7 +16,7 @@ class PageLoader {
 
     static initialize() {
         const homePage = HomeBuilder.buildHomePage();
-        NodeCollector.addNode(homePage);
+        NodeCollector.setActivePageNode(homePage)
         PageWatcher.title = HomeBuilder.name;
         this.loadPage(homePage);
     }
