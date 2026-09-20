@@ -1,0 +1,131 @@
+/* Custom Variables */
+
+:root {
+    --accent-clr: #B87D24;
+    --muted-clr: #8A8074;
+    --header-bg-clr: #1E1A16;
+    --section-action-width: 150px;
+    --homepage-spacing: 4rem;
+    --craft-highlight-bg-clr: #dacab5;
+    --light-txt-clr: white;
+    --card-shadow: 1px 1px 10px 2px var(--muted-clr);
+}
+
+/* Menu Page Styling */
+
+#menu-page {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    padding: 0 3rem 0 3rem;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+
+/* Menu Header Section Styling */
+
+#menu-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.subheading {
+    color: var(--accent-clr);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.heading {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Menu Options Section Styling */
+
+#menu-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu-option {
+    color: var(--muted-clr);
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* Menu Cards Section Styling */
+
+#menu-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px 2px var(--muted-clr);
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+    background-color: #E8DCC4;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item-media {
+    opacity: 0.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1.5;
+}
+
+.menu-icon,
+.menu-label {
+    font-size: 1.4rem;
+}
+
+.menu-item-details {
+    background-color: var(--light-txt-clr);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    flex: 1;
+}
+
+.menu-item-name {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.menu-item-name span {
+    color: var(--accent-clr);
+    font-weight: bold;
+}
+
+.menu-item-desc {
+    color: var(--muted-clr);
+}
+
+
+/* Selection Highlight Styles */
+
+.hover {
+    color: var(--header-bg-clr);
+    border-bottom: 1px solid var(--accent-clr);
+}
