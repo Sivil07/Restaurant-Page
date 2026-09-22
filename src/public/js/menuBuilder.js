@@ -135,6 +135,11 @@ class MenuBuilder {
         }
     }
 
+    // Checks to see if the given elements is a data option 
+    static #isMenuOption(element) {
+        return element.hasAttribute("data-option");
+    }
+
     // Replace the current menuCards section with a new one 
     static #updateMenuCardsSection(newOption) {
             if (newOption !== undefined) {
@@ -154,16 +159,18 @@ class MenuBuilder {
     // Listeners for menuPage: manages selection highlight and swap menu cards based on selection 
     static #menuOptionsListeners(menuOptionsSection) {
         menuOptionsSection.addEventListener("click", (e) => {
+            const element = e.target;
+
+            if (!this.#isMenuOption(element)) {
+                return;
+            }
 
             this.#unselectActiveOption()
-
-            const element = e.target;
+    
             element.classList.toggle("hover");
-
             this.#selectNewOption(element)
 
             const newOption = this.#newActiveOption(element.dataset.option)
-            
             this.#updateMenuCardsSection(newOption)     
         });
     }
