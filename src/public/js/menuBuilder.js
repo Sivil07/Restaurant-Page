@@ -175,6 +175,12 @@ class MenuBuilder {
         this.#setActiveMenuCards(menuCardSection)
     }
 
+    // Set the initial active menuOption on page load
+    static #initializeActiveOption(classicsOption) {
+        classicsOption.classList.toggle("hover");
+        this.#selectNewOption(classicsOption);
+    }
+
     /* Final Page Assembly */
 
     // Assembles the full homepage by building and appending each section 
@@ -184,8 +190,11 @@ class MenuBuilder {
         const menuOptionsSection = this.#buildMenuOptionsSection();
         const menuCardsSection = this.#buildMenuCardsSection();
 
+        const classicsOption = menuOptionsSection.querySelector('[data-option="classics"]')
+
         this.#menuOptionsListeners(menuOptionsSection);
         this.#initializeActiveMenuCards(menuCardsSection);
+        this.#initializeActiveOption(classicsOption);
 
         menuPage.append(
             menuHeaderSection,
