@@ -3,12 +3,17 @@
 :root {
     --accent-clr: #B87D24;
     --muted-clr: #8A8074;
-    --header-bg-clr: #1E1A16;
-    --section-action-width: 150px;
-    --homepage-spacing: 4rem;
-    --craft-highlight-bg-clr: #dacab5;
-    --light-txt-clr: white;
+    --options-hover-txt-clr: #1E1A16;
     --card-shadow: 1px 1px 10px 2px var(--muted-clr);
+    --card-background-clr: #E8DCC4;
+    --row-details-bg-clr: #ffffff;
+    --row-hover-bg-clr: rgba(144, 135, 122, 0.3);
+    --row-dividers: 1px solid var(--muted-clr);
+    --row-strip-start-basis: 0px;
+    --row-strip-end-basis: 20px;
+    --row-strip-transition: flex-basis 0.3s ease-in-out;
+    --row-strip-offset: -10px;
+
 }
 
 /* Menu Page Styling */
@@ -73,10 +78,10 @@
 .menu-card {
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 10px 2px var(--muted-clr);
+    box-shadow: var(--card-shadow);
     border-radius: 1rem;
     transition: transform 0.3s ease-in-out;
-    background-color: #E8DCC4;
+    background-color: var(--card-background-clr);
 }
 
 .menu-card:hover {
@@ -98,7 +103,7 @@
 }
 
 .menu-item-details {
-    background-color: var(--light-txt-clr);
+    background-color: var(--row-details-bg-clr);
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -142,27 +147,26 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid var(--muted-clr);
+    border-bottom: var(--row-dividers);
     overflow: hidden;
 }
 
 .menu-row:hover {
-    background-color: rgba(144, 135, 122, 0.3);
+    background-color: var(--row-hover-bg-clr);
     border-bottom: 1px solid var(--accent-clr);
 }
 
 .menu-row::before {
     content: "";
-    flex: 0 0 0px;
+    flex-basis: var(--row-strip-start-basis);
     background-color: var(--accent-clr);
     height: 100%;
-    margin-left: -10px;
-    transition: flex-basis 0.3s ease;
+    margin-left: var(--row-strip-offset);
+    transition: var(--row-strip-transition);
 }
 
 .menu-row:hover::before {
-    flex-basis: 20px;
-
+    flex-basis: var(--row-strip-end-basis);
 }
 
 .row-desc {
@@ -200,7 +204,7 @@
 /* Selection Highlight Styles */
 
 .hover {
-    color: var(--header-bg-clr);
+    color: var(--options-hover-txt-clr);
     border-bottom: 1px solid var(--accent-clr);
 }
 
