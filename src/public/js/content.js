@@ -130,6 +130,34 @@ const menuPageContent = {
             {
                 icon: "🥪", label: "Glacier Club", title: "The Glacier Club<span>$14</span>", description: "Turkey, chilled bacon, iceberg crunch, and citrus mayo on country white."
             }
+        ],
+        sides: [
+            {
+                title: "Mac & Cheese Cup", description: "Warm, cheesy, and comforting.", cost: "$2.50"
+            },
+            {
+                title: "Garlic Bread", description: "Toasted with butter and herbs.", cost: "$3.50"
+            },
+            {
+                title: "Potato Salad", description: "Creamy, classic deli-style.", cost: "$1.75"
+            },
+            {
+                title: "Coleslaw", description: "Shredded cabbage with a tangy dressing.", cost: "$3.75"
+            }
+        ],
+        drinks: [
+            {
+                title: "Iced Tea", description: "Fresh-brewed, lightly sweetened.", cost: "$2.50"
+            },
+            {
+                title: "Lemonade", description: "House-made with fresh-squeezed lemons.", cost: "$2.75"
+            },
+            {
+                title: "Sweet Tea", description: "Southern-style, lightly sweetened.", cost: "$2.00"
+            },
+            {
+                title: "Apple Juice", description: "Cold-pressed, naturally sweet.", cost: "$2.25"
+            }
         ]
     }
 }
