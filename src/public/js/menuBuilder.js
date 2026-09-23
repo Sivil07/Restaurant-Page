@@ -140,7 +140,8 @@ class MenuBuilder {
 
 
     /* Option Selection: lookup menuCards for option, update 
-    the highlight state, rebuild the menu cards section using the new option */
+    the highlight state, rebuild the menu cards section using the new option 
+    and adds an animation for the process */
 
     /* Selects the correct menu data for the chosen option and identifies
    whether it should be displayed as cards or rows. */
@@ -196,6 +197,21 @@ class MenuBuilder {
         return element.hasAttribute("data-option");
     }
 
+    // Adds the new menu display onto the page and updates the internal reference
+    static #applyContentSwap(root, newCardSection) {
+        root.appendChild(newCardSection);
+        this.#setActiveMenuDisplay(newCardSection);
+    }
+
+    // Apply the content swap with a view transition when supported
+    static #startContentSwapTransition(root, newCardSection) {
+        if (document.startViewTransition) {
+            document.startViewTransition(() => this.#applyContentSwap(root, newCardSection))
+        } else {
+            this.#applyContentSwap(root, newCardSection)
+        }
+    }
+
     // Replace the current menuCards section with a new one 
     static #updateMenuDisplaySection(result) {
         if (result.newOption !== undefined) {
@@ -204,8 +220,7 @@ class MenuBuilder {
             previousCards.remove();
             this.#clearActiveMenuDisplay();
             const newCardSection = this.#buildMenuDisplaySection(result)
-            root.appendChild(newCardSection);
-            this.#setActiveMenuDisplay(newCardSection);
+            this.#startContentSwapTransition(root, newCardSection)
         }
     }
 
