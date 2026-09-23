@@ -73,6 +73,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
+    view-transition-name: menu-display;
 }
 
 .menu-card {
@@ -132,6 +133,7 @@
 #menu-rows {
     display: grid;
     grid-template-columns: 1fr;
+    view-transition-name: menu-display;
 }
 
 .row-header {
@@ -208,7 +210,7 @@
     border-bottom: 1px solid var(--accent-clr);
 }
 
-/* @media (min-width: 505px) {
+@media (min-width: 505px) {
     .row-title,
     .row-cost {
         font-size: 1.2rem;
@@ -217,4 +219,26 @@
     .row-details {
         font-size: 1rem;
     }
-} */
+}
+
+/* View Transitions/Animations */
+
+::view-transition-old(menu-display) {
+  animation: 300ms ease-in-out contentSwapIn;
+}
+::view-transition-new(menu-display) {
+  animation: 300ms ease-in-out contentSwapOut ;
+}
+
+@keyframes contentSwapOut {
+    from {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes contentSwapIn {
+    to {
+        transform: translateY(-30px);
+    }
+}
+
