@@ -122,6 +122,76 @@
     color: var(--muted-clr);
 }
 
+/* Menu Rows Section Styling */
+
+#menu-rows {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.row-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--muted-clr);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-row {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--muted-clr);
+    overflow: hidden;
+}
+
+.menu-row:hover {
+    background-color: rgba(144, 135, 122, 0.3);
+    border-bottom: 1px solid var(--accent-clr);
+}
+
+.menu-row::before {
+    content: "";
+    flex: 0 0 0px;
+    background-color: var(--accent-clr);
+    height: 100%;
+    margin-left: -10px;
+    transition: flex-basis 0.3s ease;
+}
+
+.menu-row:hover::before {
+    flex-basis: 20px;
+
+}
+
+.row-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.row-desc,
+.row-cost {
+    padding: 1rem;
+}
+
+.row-title {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.row-cost {
+    color: var(--muted-clr);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+.menu-row:hover .row-cost {
+    color: var(--accent-clr);
+}
 
 /* Selection Highlight Styles */
 
