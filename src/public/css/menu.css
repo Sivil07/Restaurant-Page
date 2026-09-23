@@ -179,13 +179,17 @@
 .row-title {
     font-weight: bold;
     text-transform: capitalize;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.row-details {
+    font-size: 0.7rem;
 }
 
 .row-cost {
     color: var(--muted-clr);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-left: auto;
 }
 
@@ -200,16 +204,13 @@
     border-bottom: 1px solid var(--accent-clr);
 }
 
-@media (max-width: 450px) {
-    .row-title {
-        font-size: 1rem;
-    }
-
+@media (min-width: 505px) {
+    .row-title,
     .row-cost {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
 
     .row-details {
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
 }
