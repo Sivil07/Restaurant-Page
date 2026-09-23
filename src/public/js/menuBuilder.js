@@ -4,7 +4,7 @@ import ElementBuilder from "./elementBuilder.js";
 class MenuBuilder {
 
     static #activeOption = null
-    static #activeMenuCards = null
+    static activeMenuDisplay = null
 
     static #navName = "Menu"
 
@@ -22,12 +22,12 @@ class MenuBuilder {
         this.#activeOption = null
     }
 
-    static #setActiveMenuCards(cards) {
-        this.#activeMenuCards = cards
+    static #setActiveMenuDisplay(cards) {
+        this.activeMenuDisplay = cards
     }
 
-    static #clearActiveMenuCards() {
-        this.#activeMenuCards = null
+    static #clearActiveMenuDisplay() {
+        this.activeMenuDisplay = null
     }
 
     /* Build all UI components for Menu page: header, options, cards */
@@ -200,12 +200,12 @@ class MenuBuilder {
     static #updateMenuDisplaySection(result) {
         if (result.newOption !== undefined) {
             const root = document.querySelector("#menu-page");
-            const previousCards = this.#activeMenuCards;
+            const previousCards = this.activeMenuDisplay;
             previousCards.remove();
-            this.#clearActiveMenuCards();
+            this.#clearActiveMenuDisplay();
             const newCardSection = this.#buildMenuDisplaySection(result)
             root.appendChild(newCardSection);
-            this.#setActiveMenuCards(newCardSection);
+            this.#setActiveMenuDisplay(newCardSection);
         }
     }
 
@@ -234,7 +234,7 @@ class MenuBuilder {
 
     // Set the initial active menuCards section on page load 
     static #initializeActiveMenuCards(menuCardSection) {
-        this.#setActiveMenuCards(menuCardSection)
+        this.#setActiveMenuDisplay(menuCardSection)
     }
 
     // Set the initial active menuOption on page load
