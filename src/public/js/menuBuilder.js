@@ -30,19 +30,19 @@ class MenuBuilder {
         this.activeMenuDisplay = null
     }
 
-    /* Build all UI components for Menu page: header, options, cards */
+    /* Build all UI components for Menu page: header, options, cards, rows */
 
     // Builders for Menu Header Component 
     static #buildMenuHeaderSection() {
         const menuHeader = ElementBuilder.createElement({ elementTag: "section", id: "menu-header" });
-        const menuSubheading = ElementBuilder.createElement({ elementTag: "p", classNames: ["subheading"], textContent: menuPageContent.menuHeader.subheading });
-        const menuHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["heading"], textContent: menuPageContent.menuHeader.heading });
+        const menuSubheading = ElementBuilder.createElement({ elementTag: "p", classNames: ["menu-subheading"], textContent: menuPageContent.menuHeader.subheading });
+        const menuHeading = ElementBuilder.createElement({ elementTag: "p", classNames: ["menu-heading"], textContent: menuPageContent.menuHeader.heading });
         menuHeader.append(menuSubheading, menuHeading)
 
         return menuHeader;
     }
 
-    // Builders for Menu Display Component
+    // Builders for Menu Options Component
     static #buildMenuOptions() {
         let menuOptions = []
         const dataName = menuPageContent.menuOptions.dataName;
