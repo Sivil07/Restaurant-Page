@@ -9,7 +9,7 @@
     --row-details-bg-clr: #ffffff;
     --row-hover-bg-clr: rgba(144, 135, 122, 0.3);
     --row-dividers: 1px solid var(--muted-clr);
-    --row-strip-start-basis: 0px;
+    --row-strip-start-basis: 0 0 0px;
     --row-strip-end-basis: 20px;
     --row-strip-transition: flex-basis 0.3s ease-in-out;
     --row-strip-offset: -10px;
@@ -158,7 +158,7 @@
 
 .menu-row::before {
     content: "";
-    flex-basis: var(--row-strip-start-basis);
+    flex: var(--row-strip-start-basis);
     background-color: var(--accent-clr);
     height: 100%;
     margin-left: var(--row-strip-offset);
@@ -208,7 +208,7 @@
     border-bottom: 1px solid var(--accent-clr);
 }
 
-@media (min-width: 505px) {
+/* @media (min-width: 505px) {
     .row-title,
     .row-cost {
         font-size: 1.2rem;
@@ -217,4 +217,4 @@
     .row-details {
         font-size: 1rem;
     }
-}
+} */
