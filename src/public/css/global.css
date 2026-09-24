@@ -22,18 +22,24 @@
     --light-txt-clr: white;
 }
 
-body {
+/* body {
     min-height: 100vh;
     background-color: var(--site-bg-clr);
     display: flex;
     flex-direction: column;
+} */
+
+body {
+    min-height: 100vh;
+    background-color: var(--site-bg-clr);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 /* Header Styling */
 
 #site-header {
     background-color: var(--header-bg-clr);
-    flex-basis: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -147,7 +153,6 @@ body {
 /* Content Styling */
 
 #content {
-    flex-basis: auto;
     margin-top: 4rem;
 }
 
@@ -159,7 +164,6 @@ body {
     display: flex;
     justify-content: center;
     padding: 1.5rem 0 1.5rem 0;
-    flex: 1;
 }
 
 #footer-text {
