@@ -22,13 +22,6 @@
     --light-txt-clr: white;
 }
 
-/* body {
-    min-height: 100vh;
-    background-color: var(--site-bg-clr);
-    display: flex;
-    flex-direction: column;
-} */
-
 body {
     min-height: 100vh;
     background-color: var(--site-bg-clr);
@@ -46,6 +39,7 @@ body {
     padding: 1rem 0 1rem 0;
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 
 
