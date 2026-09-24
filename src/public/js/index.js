@@ -9,4 +9,4 @@ import PageWatcher from "./pageWatcher.js";
 NavBuilder.initialize();
 PageLoader.initialize();
 
-PageWatcher.navListener();
+PageWatcher.navListeners();

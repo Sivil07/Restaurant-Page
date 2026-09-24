@@ -52,8 +52,10 @@ class PageWatcher {
     }
 
     /* Listens for nav clicks.
-    It swaps the current page for the clicked nav link's page */
-    static navListener() {
+    It swaps the current page for the clicked nav link's page.
+    If the nav menu is open and the user clicks outside the nav 
+    toggle or menu input, the menu will be closed */
+    static navListeners() {
         const navContainer = document.querySelector("#nav-container");
         navContainer.addEventListener("click", (e) => {
             const element = e.target;
@@ -61,6 +63,15 @@ class PageWatcher {
             const newPage = this.#findNewPage(cleanedString);
             if (newPage !== undefined) {
                 this.swapPage(newPage, cleanedString);
+            }
+        })
+
+        document.body.addEventListener("click", (e) => {
+            const element = e.target;
+            const navInput = document.querySelector("#small-menu");
+            const shouldCloseMenu = element.id !== "nav-toggle" && element.id !== "small-menu";
+            if (navInput.checked && shouldCloseMenu) {
+                navInput.checked = false;
             }
         })
     }
