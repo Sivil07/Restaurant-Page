@@ -45,19 +45,45 @@ class AboutBuilder {
         return ourStorySection;
     }
 
+    // Builders for Our Values Section
+    static #buildValueItem(icon, title, description) {
+        const valueItem = ElementBuilder.createElement({ elementTag: "div", classNames: [ "value-item" ] });
+        const valueIcon = ElementBuilder.createElement({ elementTag: "p", classNames: [ "value-icon" ], textContent: icon });
+        const valueTitle = ElementBuilder.createElement({ elementTag: "p", classNames: [ "value-title" ], textContent: title });
+        const valueDescription = ElementBuilder.createElement({ elementTag: "p", classNames: [ "value-description" ], textContent: description });
+
+        valueItem.append( valueIcon, valueTitle, valueDescription );
+        return valueItem;
+    }
+
+    static #buildValueItems() {
+        const valueItems = [];
+        for (const item of aboutPageContent.ourValues) {
+            const valueItem = this.#buildValueItem( item.icon, item.title, item.description );
+            valueItems.push(valueItem);
+        }
+        return valueItems;
+    }
+
+    static #buildOurValuesSection() {
+        const ourValuesSection = ElementBuilder.createElement({ elementTag: "section", id: "our-values-section" });
+        ourValuesSection.append(...this.#buildValueItems());
+        return ourValuesSection;
+    }
+
     /* Final Page Assembly */
 
     // Assembles the full aboutPage by building and appending each section
     static buildAboutPage() {
         const aboutPage = ElementBuilder.createElement({ elementTag: "main", id: "about-page" });
         const ourStorySection = this.#buildOurStorySection();
-        // const ourValuesSection = ElementBuilder.createElement({ elementTag: "section", id: "our-values-section" });
+        const ourValuesSection = this.#buildOurValuesSection();
         // const theTeamSection = ElementBuilder.createElement({ elementTag: "section", id: "the-team-section" });
         // const quoteSection = ElementBuilder.createElement({ elementTag: "section", id: "quote-section" });
 
         aboutPage.append(
             ourStorySection,
-            // ourValuesSection,
+            ourValuesSection,
             // theTeamSection,
             // quoteSection
         )
