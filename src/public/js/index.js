@@ -1,6 +1,7 @@
 import "../css/global.css"
 import "../css/home.css";
 import "../css/menu.css"
+import "../css/about.css"
 
 import NavBuilder from "./navBuilder.js";
 import PageLoader from "./pageLoader.js";
