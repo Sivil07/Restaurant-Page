@@ -123,6 +123,16 @@ class AboutBuilder {
         return theTeamSection;
     }
 
+    // Builders for Quote Section
+    static #buildQuoteSection() {
+        const quoteSection = ElementBuilder.createElement({ elementTag: "section", id: "quote-section" });
+        const quoteText = ElementBuilder.createElement({ elementTag: "p", id: "quote-text", textContent: aboutPageContent.quote.text });
+        const quoteSource = ElementBuilder.createElement({ elementTag: "p", id: "quote-source", textContent: aboutPageContent.quote.source });
+
+        quoteSection.append( quoteText, quoteSource );
+        return quoteSection;
+    }
+
     /* Final Page Assembly */
 
     // Assembles the full aboutPage by building and appending each section
@@ -131,13 +141,13 @@ class AboutBuilder {
         const ourStorySection = this.#buildOurStorySection();
         const ourValuesSection = this.#buildOurValuesSection();
         const theTeamSection = this.#buildTheTeamSection();
-        // const quoteSection = ElementBuilder.createElement({ elementTag: "section", id: "quote-section" });
+        const quoteSection = this.#buildQuoteSection();
 
         aboutPage.append(
             ourStorySection,
             ourValuesSection,
             theTeamSection,
-            // quoteSection
+            quoteSection
         )
 
         return aboutPage;
