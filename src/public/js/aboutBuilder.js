@@ -71,6 +71,58 @@ class AboutBuilder {
         return ourValuesSection;
     }
 
+    // Builders for The Team Section
+    static #buildTeamHeader() {
+        const teamHeader = ElementBuilder.createElement({ elementTag: "div", id: "team-header" });
+        const teamSubtitle = ElementBuilder.createElement({ elementTag: "p", id: "team-subtitle", textContent: aboutPageContent.theTeam.teamHeader.subtitle });
+        const teamTitle = ElementBuilder.createElement({ elementTag: "p", id: "team-title", textContent: aboutPageContent.theTeam.teamHeader.title });
+
+        teamHeader.append( teamSubtitle, teamTitle );
+        return teamHeader;
+    }
+
+    static #buildMemberDetails(name, role) {
+        const memberDetails = ElementBuilder.createElement({ elementTag: "div", classNames: [ "member-details" ] });
+        const memberName = ElementBuilder.createElement({ elementTag: "p", classNames: [ "member-name" ], textContent: name });
+        const memberRole = ElementBuilder.createElement({ elementTag: "p", classNames: [ "member-role" ], textContent: role });
+
+        memberDetails.append( memberName, memberRole );
+        return memberDetails;
+    }
+
+    static #buildMember(photo, name, role) {
+        const teamMember = ElementBuilder.createElement({ elementTag: "div", classNames: [ "team-member" ] });
+        const memberPhoto = ElementBuilder.createElement({ elementTag: "p", classNames: [ "member-photo" ], textContent: photo });
+        const memberDetails = this.#buildMemberDetails( name, role );
+
+        teamMember.append( memberPhoto, memberDetails );
+        return teamMember;
+    }
+
+    static #buildAllMembers() {
+        const members = []
+        for (const memberDetails of aboutPageContent.theTeam.teamMembers) {
+            const member = this.#buildMember( memberDetails.photo, memberDetails.name, memberDetails.role );
+            members.push(member)
+        }
+        return members;
+    };
+
+    static #buildTeamMembers() {
+        const teamMembers = ElementBuilder.createElement({ elementTag: "div", id: "team-members" });
+        teamMembers.append(...this.#buildAllMembers());
+        return teamMembers;
+    }
+
+    static #buildTheTeamSection() {
+        const theTeamSection = ElementBuilder.createElement({ elementTag: "section", id: "the-team-section" });
+        const teamHeader = this.#buildTeamHeader();
+        const teamMembers = this.#buildTeamMembers();
+
+        theTeamSection.append( teamHeader, teamMembers );
+        return theTeamSection;
+    }
+
     /* Final Page Assembly */
 
     // Assembles the full aboutPage by building and appending each section
@@ -78,13 +130,13 @@ class AboutBuilder {
         const aboutPage = ElementBuilder.createElement({ elementTag: "main", id: "about-page" });
         const ourStorySection = this.#buildOurStorySection();
         const ourValuesSection = this.#buildOurValuesSection();
-        // const theTeamSection = ElementBuilder.createElement({ elementTag: "section", id: "the-team-section" });
+        const theTeamSection = this.#buildTheTeamSection();
         // const quoteSection = ElementBuilder.createElement({ elementTag: "section", id: "quote-section" });
 
         aboutPage.append(
             ourStorySection,
             ourValuesSection,
-            // theTeamSection,
+            theTeamSection,
             // quoteSection
         )
 
