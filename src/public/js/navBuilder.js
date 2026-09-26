@@ -1,13 +1,14 @@
 import ElementBuilder from "./elementBuilder.js";
 import HomeBuilder from "./homeBuilder.js";
 import MenuBuilder from "./menuBuilder.js";
+import AboutBuilder from "./aboutBuilder.js";
 
 class NavBuilder {
     static #root = document.querySelector("#nav-container");
     static #navItems = [
         HomeBuilder.name,
         MenuBuilder.name,
-        "About",
+        AboutBuilder.name,
         "Contact"
     ]
     

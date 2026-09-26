@@ -2,6 +2,7 @@ import NodeCollector from "./nodeCollector.js";
 import PageLoader from "./pageLoader.js";
 import HomeBuilder from "./homeBuilder.js";
 import MenuBuilder from "./menuBuilder.js";
+import AboutBuilder from "./aboutBuilder.js";
 
 /* Handles navigation events and manages page transitions */
 class PageWatcher {
@@ -29,10 +30,9 @@ class PageWatcher {
                 break;
             case "Menu":
                 newPage = MenuBuilder.buildMenuPage();
-                console.log("Menu")
                 break;
             case "About":
-                console.log("About")
+                newPage = AboutBuilder.buildAboutPage();
                 break;
             case "Contact":
                 console.log("Contact")

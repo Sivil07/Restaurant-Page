@@ -2,6 +2,7 @@ import { landingPageContent } from "./content.js";
 import ElementBuilder from "./elementBuilder.js";
 import PageWatcher from "./pageWatcher.js";
 import MenuBuilder from "./menuBuilder.js";
+import AboutBuilder from "./aboutBuilder.js";
 
 class HomeBuilder {
 
@@ -186,8 +187,8 @@ class HomeBuilder {
         homePage.addEventListener("click", (e) => {
             const element = e.target;
             if (element.id === "about-link") {
-                const newPage = MenuBuilder.buildMenuPage();
-                PageWatcher.swapPage(newPage, MenuBuilder.name)
+                const newPage = AboutBuilder.buildAboutPage();
+                PageWatcher.swapPage(newPage, AboutBuilder.name)
                 return;
             }
             
