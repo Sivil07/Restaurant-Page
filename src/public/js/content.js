@@ -16,9 +16,9 @@ const landingPageContent = {
         imageContents: { src: heroImage, alt: "Signature Meal" }
     },
     craftHighlights: [
-        { icon: "🍞", title: "Fresh baked bread", description: "Baked in-house each morning, never trucked in."},
-        { icon: "🌿", title: "Local Ingredients", description: "Sourced from growers and farms within 50 miles."},
-        { icon: "🔪", title: "Made to Order", description: "Every sandwich built fresh when you order it."},
+        { icon: "🍞", title: "Fresh baked bread", description: "Baked in-house each morning, never trucked in." },
+        { icon: "🌿", title: "Local Ingredients", description: "Sourced from growers and farms within 50 miles." },
+        { icon: "🔪", title: "Made to Order", description: "Every sandwich built fresh when you order it." },
     ],
     aboutUs: {
         subheading: "About us",
@@ -26,7 +26,7 @@ const landingPageContent = {
         text: `Started in a small corner kitchen with one recipe and a wood-fired oven,<br>
         The Oaken Label is built on the idea that a sandwich deserves the same care<br>
         as any other meal — good bread, real ingredients, made by hand.`,
-        aboutLink : "Read our story ➜",
+        aboutLink: "Read our story ➜",
         imageContents: { src: aboutImage, alt: "Restaurant Interior" }
     },
     menuPreview: {
@@ -79,12 +79,12 @@ const menuPageContent = {
         heading: "Build Your Order"
     },
     menuOptions: {
-        options: [ 
-            { textName: "Signature Classics", dataValue: "classics"}, 
-            { textName: "Hot Grilled", dataValue: "grilled"}, 
-            { textName: "Cold Crafted", dataValue: "cold"}, 
-            { textName: "Sides", dataValue: "sides"}, 
-            { textName: "Drinks", dataValue: "drinks"} 
+        options: [
+            { textName: "Signature Classics", dataValue: "classics" },
+            { textName: "Hot Grilled", dataValue: "grilled" },
+            { textName: "Cold Crafted", dataValue: "cold" },
+            { textName: "Sides", dataValue: "sides" },
+            { textName: "Drinks", dataValue: "drinks" }
         ],
         dataName: "option"
     },
@@ -162,7 +162,36 @@ const menuPageContent = {
     }
 }
 
+const aboutPageContent = {
+    ourStory: {
+        subtitle: "Our Story",
+        title: "Built on Bread.<br>Shaped by Craft.",
+        description: `The Oaken Label started with one wood-fired oven and a belief that the bread matters as much as what's inside it.
+        <br>Every loaf is baked in-house, every filling made from scratch — no shortcuts, just care, repeated daily.`,
+        action: "Meet The Team",
+        icon: "👨‍🍳",
+        label: "Founder At Work"
+    },
+    ourValues: [
+        { icon: "🍞", title: "Daily Loaves", description: "Baked daily, always fresh." },
+        { icon: "🌿", title: "Real Ingredients", description: "No fillers, no nonsense." },
+        { icon: "🏘️", title: "Here for the Block", description: "Local hands, local hearts." },
+        { icon: "❤️", title: "Made With Care", description: "Every order made with intention." },
+    ],
+    theTeam: [
+        { photo: "😊", name: "Marcus Hale", role: "Founder and Baker" },
+        { photo: "😄", name: "Lena Ortiz", role: "Menu Developer" },
+        { photo: "😋", name: "Samir Chantel", role: "Prep Specialist" },
+        { photo: "😉", name: "Riley Bennett", role: "Hospitality Lead" },
+    ],
+    quote: {
+        text: `"Every sandwich carries the sense that someone shaped it with care. That's rare."`,
+        source: "- A regular customer, since 2024"
+    }
+}
+
 export {
     landingPageContent,
-    menuPageContent
+    menuPageContent,
+    aboutPageContent
 };
