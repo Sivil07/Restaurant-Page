@@ -178,12 +178,15 @@ const aboutPageContent = {
         { icon: "🏘️", title: "Here for the Block", description: "Local hands, local hearts." },
         { icon: "❤️", title: "Made With Care", description: "Every order made with intention." },
     ],
-    theTeam: [
-        { photo: "😊", name: "Marcus Hale", role: "Founder and Baker" },
-        { photo: "😄", name: "Lena Ortiz", role: "Menu Developer" },
-        { photo: "😋", name: "Samir Chantel", role: "Prep Specialist" },
-        { photo: "😉", name: "Riley Bennett", role: "Hospitality Lead" },
-    ],
+    theTeam: {
+        teamHeader: { subtitle: "The Team", title: "The Hands Behind It" },
+        teamMembers: [
+            { photo: "😊", name: "Marcus Hale", role: "Founder and Baker" },
+            { photo: "😄", name: "Lena Ortiz", role: "Menu Developer" },
+            { photo: "😋", name: "Samir Chantel", role: "Prep Specialist" },
+            { photo: "😉", name: "Riley Bennett", role: "Hospitality Lead" },
+        ]
+    },
     quote: {
         text: `"Every sandwich carries the sense that someone shaped it with care. That's rare."`,
         source: "- A regular customer, since 2024"
