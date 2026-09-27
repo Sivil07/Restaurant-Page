@@ -22,25 +22,28 @@ class PageWatcher {
     }
 
     /* Maps a nav link's text to the page it should build
-    It returns undefined if it's unable to find the page */
+    Returns an object containing the fully built page if not 
+    defined and the page title. 
+    Both can be undefined if the page is not found */
     static #findNewPage(page) {
-        let newPage;
+        let newPageContent;
         switch (page) {
             case "Home":
-                newPage = HomeBuilder.buildHomePage();
+                newPageContent = { newPage: HomeBuilder.buildHomePage(), pageTitle: HomeBuilder.name }
                 break;
             case "Menu":
-                newPage = MenuBuilder.buildMenuPage();
+                newPageContent = { newPage: MenuBuilder.buildMenuPage(), pageTitle: MenuBuilder.name }
                 break;
             case "About":
-                newPage = AboutBuilder.buildAboutPage();
+                newPageContent = { newPage: AboutBuilder.buildAboutPage(), pageTitle: AboutBuilder.name }
                 break;
             case "Contact":
-                newPage = ContactBuilder.buildContactPage();
+            case "OrderOnline":
+                newPageContent = { newPage: ContactBuilder.buildContactPage(), pageTitle: ContactBuilder.name }
                 break;
             default:
         }
-        return newPage;
+        return newPageContent;
     }
 
     /* Swaps the current page for a new one and updates the document title */
@@ -61,9 +64,9 @@ class PageWatcher {
         navContainer.addEventListener("click", (e) => {
             const element = e.target;
             const cleanedString = this.#trimString(element.textContent);
-            const newPage = this.#findNewPage(cleanedString);
-            if (newPage !== undefined) {
-                this.swapPage(newPage, cleanedString);
+            const newPageContent = this.#findNewPage(cleanedString);
+            if (newPageContent.newPage !== undefined && newPageContent.pageTitle !== undefined) {
+                this.swapPage(newPageContent.newPage, newPageContent.pageTitle);
             }
         })
 
