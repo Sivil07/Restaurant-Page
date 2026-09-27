@@ -1,8 +1,8 @@
 import { landingPageContent } from "./content.js";
 import ElementBuilder from "./elementBuilder.js";
 import PageWatcher from "./pageWatcher.js";
-import MenuBuilder from "./menuBuilder.js";
 import AboutBuilder from "./aboutBuilder.js";
+import ContactBuilder from "./contactBuilder.js";
 
 class HomeBuilder {
 
@@ -195,8 +195,8 @@ class HomeBuilder {
             const classList = [...element.classList]
             
             if (classList.includes("section-action")) {
-                const newPage = MenuBuilder.buildMenuPage();
-                PageWatcher.swapPage(newPage, MenuBuilder.name);
+                const newPage = ContactBuilder.buildContactPage();
+                PageWatcher.swapPage(newPage, ContactBuilder.name);
                 return;
             }
         })

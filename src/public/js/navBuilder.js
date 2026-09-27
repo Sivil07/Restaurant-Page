@@ -2,6 +2,7 @@ import ElementBuilder from "./elementBuilder.js";
 import HomeBuilder from "./homeBuilder.js";
 import MenuBuilder from "./menuBuilder.js";
 import AboutBuilder from "./aboutBuilder.js";
+import ContactBuilder from "./contactBuilder.js";
 
 class NavBuilder {
     static #root = document.querySelector("#nav-container");
@@ -9,7 +10,7 @@ class NavBuilder {
         HomeBuilder.name,
         MenuBuilder.name,
         AboutBuilder.name,
-        "Contact"
+        ContactBuilder.name
     ]
     
     static #buildNavItems() {
@@ -28,4 +29,4 @@ class NavBuilder {
     }
 }
 
-export default NavBuilder
+export default NavBuilder;
