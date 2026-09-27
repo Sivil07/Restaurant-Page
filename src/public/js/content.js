@@ -68,7 +68,7 @@ const landingPageContent = {
             title: "Hours", textArray: ["Mon - Fri: 8am - 7pm", "Sat - Sun: 9am - 5pm"]
         },
         {
-            title: "Contact", textArray: ["47 Willow Bend Road, Brookhaven", "(000) 123-9999", "contact@oakandharbor.com"]
+            title: "Contact", textArray: ["47 Willow Bend Road, BrookHaven", "(000) 123-9999", "contact@oakandharbor.com"]
         }
     ]
 };
@@ -193,8 +193,30 @@ const aboutPageContent = {
     }
 }
 
+const contactPageContent = {
+    formHeader: { subtitle: "Contact Us", title: "Let's Connect" },
+    formFields: { nameLabel: "Name", emailLabel: "Email", phoneLabel: "Phone", msgLabel: "Message", submitLabel: "Send Message" },
+    visitHeader: { subtitle: "Visit Us", title: "The Oaken Label" },
+    contactRows: [
+        {
+            icon: "🏠", contactValue: "47 Willow Bend Road", contactCaption: "BrookHaven, AJ 32123"
+        },
+        {
+            icon: "📱", contactValue: "(000) 123-9999", contactCaption: "Call or text"
+        },
+        {
+            icon: "📧", contactValue: "contact@oakandharbor.com", contactCaption: "We replay within a day"
+        },
+        {
+            icon: "🕒", contactValue: "Mon-Fri 8am-7pm", contactCaption: "Sat-Sun 9am-5pm"
+        }
+    ],
+    mapPin: "📍"
+}
+
 export {
     landingPageContent,
     menuPageContent,
-    aboutPageContent
+    aboutPageContent,
+    contactPageContent
 };
