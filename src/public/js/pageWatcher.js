@@ -22,8 +22,7 @@ class PageWatcher {
     }
 
     /* Maps a nav link's text to the page it should build
-    Returns an object containing the fully built page if not 
-    defined and the page title. 
+    Returns an object containing the fully built page and the page title. 
     Both can be undefined if the page is not found */
     static #findNewPage(page) {
         let newPageContent;
