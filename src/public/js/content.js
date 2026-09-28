@@ -207,7 +207,7 @@ const contactPageContent = {
                 groupName: "phone-input", inputType: "tel", inputID: "phone", labelText: "Phone"
             },
             {
-                groupName: "ms-input", inputType: "text", inputID: "message", labelText: "Message"
+                groupName: "msg-input", inputType: "text", inputID: "message", labelText: "Message"
             },
         ],
         formSubmit: { submitLabel: "Send Message" }
