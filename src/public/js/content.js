@@ -195,7 +195,23 @@ const aboutPageContent = {
 
 const contactPageContent = {
     formHeader: { subtitle: "Contact Us", title: "Let's Connect" },
-    formFields: { nameLabel: "Name", emailLabel: "Email", phoneLabel: "Phone", msgLabel: "Message", submitLabel: "Send Message" },
+    formFields: {
+        formGroup: [
+            {
+                groupName: "name-input", inputType: "text", inputID: "name", labelText: "Name"
+            },
+            {
+                groupName: "email-input", inputType: "email", inputID: "email", labelText: "Email"
+            },
+            {
+                groupName: "phone-input", inputType: "tel", inputID: "phone", labelText: "Phone"
+            },
+            {
+                groupName: "ms-input", inputType: "text", inputID: "message", labelText: "Message"
+            },
+        ],
+        formSubmit: { submitLabel: "Send Message" }
+    },
     visitHeader: { subtitle: "Visit Us", title: "The Oaken Label" },
     contactRows: [
         {
