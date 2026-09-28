@@ -75,25 +75,89 @@ class ContactBuilder {
         return contactForm;
     }
 
+    /* Builders for Visit Panel Section */
+
+    // Visit Header Builders
+    static #buildVisitHeader() {
+        const visitHeader = ElementBuilder.createElement({ elementTag: "div", id: "visit-header" });
+        const visitSubTitle = ElementBuilder.createElement({ elementTag: "p", id: "visit-subtitle", textContent: contactPageContent.visitHeader.subtitle });
+        const visitTitle = ElementBuilder.createElement({ elementTag: "p", id: "visit-title", textContent: contactPageContent.visitHeader.title });
+
+        visitHeader.append( visitSubTitle, visitTitle );
+        return visitHeader;
+    }
+
+    // Contact Rows Builders
+    static #buildRowText( value, caption ) {
+        const rowText = ElementBuilder.createElement({ elementTag: "div", classNames: [ "contact-row-text" ] });
+        const rowValue = ElementBuilder.createElement({ elementTag: "p", classNames: [ "contact-value" ], textContent: value });
+        const rowCaption = ElementBuilder.createElement({ elementTag: "p", classNames: [ "contact-caption" ], textContent: caption });
+
+        rowText.append( rowValue, rowCaption );
+        return rowText;
+    }
+
+    static #buildRow( icon, value, caption ) {
+        const row = ElementBuilder.createElement({ elementTag: "div", classNames: [ "contact-row" ] });
+        const rowIcon = ElementBuilder.createElement({ elementTag: "p", classNames: [ "contact-icon" ], textContent: icon });
+        const rowText = this.#buildRowText( value, caption );
+        
+        row.append( rowIcon, rowText );
+        return row;
+    }
+
+    static #buildAllRows() {
+        const rows = []
+        for (const rowDetails of contactPageContent.contactRows) {
+            const row = this.#buildRow( rowDetails.icon, rowDetails.contactValue, rowDetails.contactCaption );
+            rows.push(row);
+        }
+        return rows;
+    }
+
+    static #buildContactRows() {
+        const contactRows = ElementBuilder.createElement({ elementTag: "div", id: "contact-rows" });
+        contactRows.append( ...this.#buildAllRows() );
+
+        return contactRows;
+    }
+
+    // Map Container Builders
+    static #buildMapContainer() {
+        const mapContainer = ElementBuilder.createElement({ elementTag: "div", id: "map-container" });
+        const mapPin = ElementBuilder.createElement({ elementTag: "p", id: "map-pin", textContent: contactPageContent.mapPin });
+
+        mapContainer.appendChild( mapPin );
+        return mapContainer;
+    }
+
+    static #buildVisitPanel() {
+        const visitPanel = ElementBuilder.createElement({ elementTag: "section", id: "visit-panel" });
+        const visitHeader = this.#buildVisitHeader();
+        const contactRows = this.#buildContactRows();
+        const mapContainer = this.#buildMapContainer();
+
+        visitPanel.append( visitHeader, contactRows, mapContainer );
+
+        return visitPanel;
+    }
 
     /* Final Page Assembly */
 
     // Assembles the full contactPage by building and appending each section
 
     static buildContactPage() {
-        const contactPage = ElementBuilder.createElement({ elementTag: "main", id: "main-page" });
+        const contactPage = ElementBuilder.createElement({ elementTag: "main", id: "contact-page" });
         const contactForm = this.#buildContactFormSection();
-        // const contactForm = ElementBuilder.createElement({ elementTag: "form", id: "contact-form" });
-        // const visitPanel = ElementBuilder.createElement({ elementTag: "section", id: "visit-panel" });
+        const visitPanel = this.#buildVisitPanel();
 
         contactPage.append( 
             contactForm, 
-            // visitPanel
+            visitPanel
          )
 
         return contactPage;
     }
-
 }
 
 export default ContactBuilder;
