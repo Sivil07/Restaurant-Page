@@ -64,7 +64,7 @@ class PageWatcher {
             const element = e.target;
             const cleanedString = this.#trimString(element.textContent);
             const newPageContent = this.#findNewPage(cleanedString);
-            if (newPageContent.newPage !== undefined && newPageContent.pageTitle !== undefined) {
+            if (newPageContent !== undefined) {
                 this.swapPage(newPageContent.newPage, newPageContent.pageTitle);
             }
         })
