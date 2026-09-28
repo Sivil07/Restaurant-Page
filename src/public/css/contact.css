@@ -55,7 +55,6 @@
 #form-fields {
     display: grid;
     gap: 2rem;
-
 }
 
 .form-group {
@@ -81,7 +80,6 @@
     padding: 0.5rem 0;
     background-color: transparent;
     outline: none;
-    flex: 1;
 }
 
 
@@ -91,13 +89,11 @@
     color: var(--muted-clr);
     transition: all 0.3s ease;
     pointer-events: none;
-    flex: 1;
 }
 
 .form-group .form-input:focus+.form-label,
 .form-group .form-input:valid+.form-label {
     top: -20px;
-    font-size: 16px;
     color: var(--accent-clr);
 }
 
