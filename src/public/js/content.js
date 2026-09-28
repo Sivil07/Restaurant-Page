@@ -196,7 +196,7 @@ const aboutPageContent = {
 const contactPageContent = {
     formHeader: { subtitle: "Contact Us", title: "Let's Connect" },
     formFields: {
-        formGroup: [
+        formGroups: [
             {
                 groupName: "name-input", inputType: "text", inputID: "name", labelText: "Name"
             },
