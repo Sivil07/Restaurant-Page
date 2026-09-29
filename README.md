@@ -105,6 +105,46 @@ npx webpack serve
 http://localhost:8080
 ```
 
+These steps are only needed if you want to deploy your own version of the project to GitHub Pages. Running it locally does not require deployment.
+
+## 🚀 Deployment
+
+>[!NOTE]
+> These steps are only needed if you want to deploy your own version of the project to GitHub Pages. If you're just running the project locally, you can ignore this section.
+
+
+This project deploys to GitHub Pages from a `gh-page` branch and built from the bundled `dist/` directory.
+
+**First Deployment only** - create the deployment branch:
+
+```
+git branch gh-pages
+```
+
+Every deployment or redeployment show follow these steps:
+
+1. Make sure all your work is committed. `git status` will show anything pending
+2. Switch to `gh-pages` and sync it with `main`
+
+```
+git checkout gh-pages && git merge main --no-edit
+```
+3. Bundle the application into `dist/`
+
+```
+npx webpack
+```
+
+4. Commit `dist` contents and push to `gh-pages` branch:
+
+```
+git add dist -f && git commit -m "Deployment commit"
+git subtree push --prefix dist origin gh-pages
+git checkout main
+```
+5. In the repository's settings, set the GitHub pages source branch to `gh-pages` and that's about it. 
+
+
 ## 🙏 Acknowledgements 
 
 All images were used from <a href="https://www.pexels.com/" alt="Pexels">Pexels</a>
