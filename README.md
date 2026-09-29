@@ -1,19 +1,19 @@
-# Restaurant Page - The Oaken Label
+# 🥪 Restaurant Page - The Oaken Label
 
 A go-to gourmet sandwich shop, brought to the web through <a href="https://www.theodinproject.com/" alt="The Odin Project">The Odin Project</a> curriculum.
 
-## About The Project
+## 📚 About The Project
 
 The Oaken Label is a fictional fine dining sandwich shop nestled in the fictional town of BrookHaven. This project takes on The Odin Project's Restaurant Page assignment and drafts a fully responsive single page application for the shop's fictional owners.
 
 The site includes 4 dynamically render pages `Home` `Menu` `About` and `Contact` that are all rendered through JavaScript and DOM manipulation. 
 
 
-<a href="https://sivil07.github.io/Restaurant-Page/" alt="Live Site">Live Demo</a>
+🌐<a href="https://sivil07.github.io/Restaurant-Page/" alt="Live Site">Live Site</a>
 
 ![Site Preview](./src/assets/img/site-preview.png)
 
-### Features
+### ✨ Features
 
 - Client-side page routing: the Home, Menu, About, and Contact pages are built and swapped in place via a dedicated `PageWatcher` class, which updates the document title and active page without triggering a page reload.
 - Data driven content: every page's text, icons, and images are generated from structured objects exported from content.js.
@@ -22,7 +22,7 @@ The site includes 4 dynamically render pages `Home` `Menu` `About` and `Contact`
 - Animated menu browsing: menu categories switch from a card to a row layout depending on the option you've selected.
 - Sticky header: the header stays fixed above the page while scrolling, without shifting position.
 
-### Project Structure
+### 📁 Project Structure
 
 ```
 project/
@@ -64,7 +64,7 @@ project/
 - `pageLoader.js` and `nodeCollector.js` handle inserting/removing the active page from `#content` and tracks a reference to it between page swaps.
 - `navBuilder.js` builds the nav bar's buttons from each page builder's own `name` getter, so the nav always reflects whatever pages actually exist.
 
-## Getting Started
+## 📦 Getting Started
 
 ### Prerequisites
 
@@ -73,7 +73,7 @@ Before running the project locally, make sure you have the following installed:
 - **npm** - bundled with *Node.js*
 - **Git** - only if you plan to clone the repository
 
-### Instructions
+### 📋 Instructions
 
 1. Clone the repo
 
@@ -105,6 +105,6 @@ npx webpack serve
 http://localhost:8080
 ```
 
-## Acknowledgements 
+## 🙏 Acknowledgements 
 
 All images were used from <a href="https://www.pexels.com/" alt="Pexels">Pexels</a>
