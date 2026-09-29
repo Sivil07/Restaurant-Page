@@ -1,5 +1,10 @@
 # 🥪 Restaurant Page - The Oaken Label
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?logo=webpack&logoColor=black)
+
 A go-to gourmet sandwich shop, brought to the web through <a href="https://www.theodinproject.com/" alt="The Odin Project">The Odin Project</a> curriculum.
 
 ## 📚 About The Project
