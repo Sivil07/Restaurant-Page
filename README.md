@@ -1,4 +1,4 @@
-# Restaurant-Page-4
+# Restaurant Page - The Oaken Label
 
 A go-to gourmet sandwich shop, brought to the web through <a href="https://www.theodinproject.com/" alt="The Odin Project">The Odin Project</a> curriculum.
 
@@ -8,7 +8,9 @@ The Oaken Label is a fictional fine dining sandwich shop nestled in the fictiona
 
 The site includes 4 dynamically render pages `Home` `Menu` `About` and `Contact` that are all rendered through JavaScript and DOM manipulation. 
 
-Live Demo: (placeholder)
+
+<a href="https://sivil07.github.io/Restaurant-Page/" alt="Live Site">Live Demo</a>
+
 ![Site Preview](./src/assets/img/site-preview.png)
 
 ### Features
