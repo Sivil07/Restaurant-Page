@@ -105,8 +105,6 @@ npx webpack serve
 http://localhost:8080
 ```
 
-These steps are only needed if you want to deploy your own version of the project to GitHub Pages. Running it locally does not require deployment.
-
 ## 🚀 Deployment
 
 >[!NOTE]
