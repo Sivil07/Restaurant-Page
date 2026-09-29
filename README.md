@@ -54,7 +54,7 @@ project/
 ├── webpack.config.js
 └── README.md
 ```
-#### Application Architecture
+#### 🏗️ Application Architecture
 - `template.html` is the main HTML file that holds the header and navigation. It also contains the `#content` element where JavaScript loads each page dynamically.
 - `index.js` is the Webpack entry point. It initializes the nav, loads the initial page, and connects the navigation listeners to wait for page changes.
 - `elementBuilder.js` is a small shared utility used by every page builder to create DOM elements from a single configuration object which lets you specify the tag, id, classes, attributes and other options for the element you want to create.
@@ -66,7 +66,7 @@ project/
 
 ## 📦 Getting Started
 
-### Prerequisites
+### 🧰 Prerequisites
 
 Before running the project locally, make sure you have the following installed:
 - **Node.js** - ideally the latest LTS version
