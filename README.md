@@ -9,6 +9,7 @@ The Oaken Label is a fictional fine dining sandwich shop nestled in the fictiona
 The site includes 4 dynamically render pages `Home` `Menu` `About` and `Contact` that are all rendered through JavaScript and DOM manipulation. 
 
 Live Demo: (placeholder)
+![Site Preview](./src/assets/img/site-preview.png)
 
 ### Features
 
