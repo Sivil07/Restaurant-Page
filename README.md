@@ -30,7 +30,8 @@ The site includes 4 dynamically render pages `Home` `Menu` `About` and `Contact`
 ### 📁 Project Structure
 
 ```
-project/
+Restaurant-Page
+├── dist/
 ├── src/
 │   ├── assets/
 │   │   └── img/
@@ -56,7 +57,9 @@ project/
 │       └── template.html
 ├── .gitignore
 ├── package.json
-├── webpack.config.js
+├── webpack.common.js
+├── webpack.dev.js
+├── webpack.prod.js
 └── README.md
 ```
 #### 🏗️ Application Architecture
